@@ -1,4 +1,5 @@
 import type { Tracker } from '@/types'
+import avatarImg from '@/assets/avatars/avatar.png';
 
 export const mockTrackers: Tracker[] = [
   {
@@ -9,7 +10,7 @@ export const mockTrackers: Tracker[] = [
     state: 'stopped',
     lastUpdate: '2023-04-15 12:30:00',
     color: '#FFCA28',
-    photo: 'src/assets/avatars/avatar.png',
+    photo: avatarImg,
   },
   {
     id: '2',
