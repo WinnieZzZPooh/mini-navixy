@@ -176,7 +176,7 @@ const addressValidationError = ref<string | null>(null)
 const addressSuggestions = ref<any[]>([])
 const isLoadingAddresses = ref(false)
 
-const taskData = ref({
+const initialData = {
   id: '',
   name: '',
   description: '',
@@ -191,7 +191,9 @@ const taskData = ref({
   deadline: new Date().toISOString().substr(0, 10),
   required: false,
   createdAt: '',
-})
+}
+
+const taskData = ref(initialData)
 
 const geoZones = computed(() => {
   return geoZoneStore.geoZones
@@ -221,22 +223,7 @@ watch(
 )
 
 const resetForm = () => {
-  taskData.value = {
-    id: '',
-    name: '',
-    description: '',
-    comment: '',
-    geoZoneId: '',
-    trackerId: '',
-    address: '',
-    coordinates: {
-      lat: 0,
-      lng: 0,
-    },
-    deadline: new Date().toISOString().substr(0, 10),
-    required: false,
-    createdAt: '',
-  }
+  taskData.value = initialData
   showPreview.value = false
 }
 
